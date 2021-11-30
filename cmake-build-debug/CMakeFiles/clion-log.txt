@@ -1,0 +1,4 @@
+/opt/homebrew/Cellar/cmake/3.21.4/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/opt/homebrew/opt/llvm/bin/clang -DCMAKE_CXX_COMPILER=/opt/homebrew/opt/llvm/bin/clang++ -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug

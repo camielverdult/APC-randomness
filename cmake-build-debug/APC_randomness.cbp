@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="APC_randomness"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="APC_randomness">
+				<Option output="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug/APC_randomness" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/."/>
+					<Add directory="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/examples"/>
+					<Add directory="/opt/homebrew/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/opt/homebrew/Cellar/llvm/13.0.0_1/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 APC_randomness"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="APC_randomness/fast">
+				<Option output="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug/APC_randomness" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/."/>
+					<Add directory="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/examples"/>
+					<Add directory="/opt/homebrew/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/opt/homebrew/Cellar/llvm/13.0.0_1/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 APC_randomness/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/camiel/Documents/school/TI2/Advanced\ Programming\ Concepts/APC-randomness/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/examples/cpp11rand.cpp">
+			<Option target="APC_randomness"/>
+		</Unit>
+		<Unit filename="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/examples/cpp11rand.h">
+			<Option target="APC_randomness"/>
+		</Unit>
+		<Unit filename="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/examples/std_rand.cpp">
+			<Option target="APC_randomness"/>
+		</Unit>
+		<Unit filename="/Users/camiel/Documents/school/TI2/Advanced Programming Concepts/APC-randomness/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
