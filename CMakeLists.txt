@@ -9,4 +9,4 @@ include_directories(examples)
 add_executable(std_rand_example
         examples/std_rand.cpp)
 
-add_executable(cpp11_rand_example examples/cpp11rand.cpp)
+add_executable(linear_congruential_example examples/linear_congruential.cpp)

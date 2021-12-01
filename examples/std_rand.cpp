@@ -17,12 +17,13 @@ int main() {
 //    std::cout << "Random value on [0 " << RAND_MAX << "]: "
 //              << random_variable << '\n';
 
-    int a{};
+    long long a = 0;
 
     while(a != -1){
 
-        std::cout << "Enter a number to use as seed (enter '-1' to exit program)." << std::endl;
+        std::cout << "Enter a number to use as seed (enter '-1' to exit program):";
         std::cin >> a;
+        std::cout << std::endl;
         std::cout << "Using seed: " << a << std::endl;
 
         if(a == -1){
