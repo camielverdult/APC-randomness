@@ -23,22 +23,20 @@ int main() {
 
         std::cout << "Enter a number to use as seed (enter '-1' to exit program):";
         std::cin >> a;
-<<<<<<< HEAD
         std::cout << std::endl;
         std::cout << "Using seed: " << a << std::endl;
-=======
->>>>>>> 3b65abd93e451a294d1b55169a927942e4b4c308
 
         if(a == -1){
+<<<<<<< HEAD
             std::cout << "Quitting program." << std::endl;
+=======
+            std::cout << "Quitting program.";
+>>>>>>> parent of e0552a8 (Update std_rand.cpp)
             return 0;
         }
 
-        std::cout << "Using seed: \t" << a << std::endl;
-
         srand(a);
 
-        std::cout << "RNG sequence: \t";
         // roll 6-sided dice 10 times
         for (int n=0; n < 10; ++n) {
             unsigned int x = 7;
