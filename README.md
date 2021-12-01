@@ -20,8 +20,10 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 
 ## RNG engine summary
 
-| engine                                                                                        | name in <random>           | Speed     | Storage | Characteristics | Randomness comment                             |
-|-----------------------------------------------------------------------------------------------|----------------------------|-----------|---------|-----------------|------------------------------------------------|
-| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)            | linear_congruential_engine | Very fast | Greater | "Meh"           |
-| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                            | mersenne_twister_engine    | Moderate  | A lot   | "Damn"          | Period length is chosen to be a Mersenne prime |
-| [Subtract with carry](https://en.wikipedia.org/wiki/Subtract_with_carry) AKA Lagged Fibonacci | subtract_with_carry_engine |           |         |                 |
+| engine                                                                                      | name in `<random>`         | Speed     | Storage     | Characteristics                    | Randomness comment                                                                                                |
+|---------------------------------------------------------------------------------------------|----------------------------|-----------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)          | linear_congruential_engine | 🔥        | very little | Fast and easy, highly configurable | Period length is parameter dependant, smaller initialization polynomials can reduce the period length drastically |
+| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                          | mersenne_twister_engine    | Moderate  | A lot       | "Damn"                             | Period length is chosen to be a Mersenne prime                                                                    |
+| [Subtract with carry / Lagged Fibonacci](https://en.wikipedia.org/wiki/Subtract_with_carry) | subtract_with_carry_engine | Very fast | Greater     | "Meh"                              | Maximum period of (2k − 1)×2M-1 or y = xk + xj + 1                                                                |
+
+## In-depth overview of RNGs
