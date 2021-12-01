@@ -27,3 +27,32 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 | [Subtract with carry / Lagged Fibonacci](https://en.wikipedia.org/wiki/Subtract_with_carry) | subtract_with_carry_engine | Very fast | Greater     | "Meh"                              | Maximum period of (2k − 1)×2M-1 or y = xk + xj + 1                                                                |
 
 ## In-depth overview of RNGs
+
+### Linear Congruential
+
+The linear congruential random number generation uses a piecewise linear function (AKA several linear formulas, the one being used is dependent on parameters provided to the function). For the LCG, this formula is the following:
+```
+X(n+1) = (aXn + c) % m
+```
+where: 
+- m: modulus
+- a: multiplier
+- c: increment
+- X0: start value
+
+Here's what that formula could look like as a Python function:
+```py
+def lcg(modulus: int, a: int, c: int, seed: int) -> Generator[int, None, None]:
+    """Linear congruential generator."""
+    # Returns a generator with pseudo-random numbers
+    while True:
+        seed = (a * seed + c) % modulus
+        yield seed
+```
+
+Here is an example of the output of this function with different parameters:
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
+
+### Mersenne Twister
+
