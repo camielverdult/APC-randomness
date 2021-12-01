@@ -42,6 +42,8 @@ where:
 
 Here's what that formula could look like as a Python function:
 ```py
+from typing import Generator
+
 def lcg(modulus: int, a: int, c: int, seed: int) -> Generator[int, None, None]:
     """Linear congruential generator."""
     # Returns a generator with pseudo-random numbers
@@ -68,7 +70,7 @@ Breaking this function down however, we see that if we supply the generator with
 
 In the example program you are asked to enter a value that will be used as the seed for the RNG.
 If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
-std::rand() is dependant on a different seed everytime to generate anything close to a random sequence.
+std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
 
 Considering this, we can conclude that std::rand() by itself is not random at all.
 To actually generate random numbers we will look at more sophisticated algorithms that handle RNG much better.
