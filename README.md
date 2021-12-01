@@ -20,6 +20,7 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 
 ## RNG engine summary
 
+<<<<<<< Updated upstream
 | engine                                                                                      | name in `<random>`         | Speed     | Storage     | Characteristics                    | Randomness comment                                                                                                |
 |---------------------------------------------------------------------------------------------|----------------------------|-----------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)          | linear_congruential_engine | 🔥        | very little | Fast and easy, highly configurable | Period length is parameter dependant, smaller initialization polynomials can reduce the period length drastically |
@@ -56,3 +57,24 @@ Here is an example of the output of this function with different parameters:
 
 ### Mersenne Twister
 
+=======
+| engine                                                                                        | name in <random>           | Speed     | Storage | Characteristics | Randomness comment                             |
+|-----------------------------------------------------------------------------------------------|----------------------------|-----------|---------|-----------------|------------------------------------------------|
+| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)            | linear_congruential_engine | Very fast | Greater | "Meh"           |
+| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                            | mersenne_twister_engine    | Moderate  | A lot   | "Damn"          | Period length is chosen to be a Mersenne prime |
+| [Subtract with carry](https://en.wikipedia.org/wiki/Subtract_with_carry) AKA Lagged Fibonacci | subtract_with_carry_engine |           |         |                 |
+
+
+## Example 1: std::rand() 
+#### See the code in std_rand.cpp
+
+std::rand() is the first and most basic of random number generators used in programming. This function uses a seed to create a pseudo-random output of numbers.
+Breaking this function down however, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
+
+In the example program you are asked to enter a value that will be used as the seed for the RNG.
+If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
+std::rand() is dependant on a different seed everytime to generate anything close to a random sequence.
+
+Considering this, we can conclude that std::rand() by itself is not random at all.
+To actually generate random numbers we will look at more sophisticated algorithms that handle RNG much better.
+>>>>>>> Stashed changes
