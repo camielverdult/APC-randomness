@@ -20,7 +20,6 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 
 ## RNG engine summary
 
-<<<<<<< Updated upstream
 | engine                                                                                      | name in `<random>`         | Speed     | Storage     | Characteristics                    | Randomness comment                                                                                                |
 |---------------------------------------------------------------------------------------------|----------------------------|-----------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)          | linear_congruential_engine | 🔥        | very little | Fast and easy, highly configurable | Period length is parameter dependant, smaller initialization polynomials can reduce the period length drastically |
@@ -57,7 +56,6 @@ Here is an example of the output of this function with different parameters:
 
 ### Mersenne Twister
 
-=======
 | engine                                                                                        | name in <random>           | Speed     | Storage | Characteristics | Randomness comment                             |
 |-----------------------------------------------------------------------------------------------|----------------------------|-----------|---------|-----------------|------------------------------------------------|
 | [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)            | linear_congruential_engine | Very fast | Greater | "Meh"           |
@@ -77,4 +75,3 @@ std::rand() is dependant on a different seed everytime to generate anything clos
 
 Considering this, we can conclude that std::rand() by itself is not random at all.
 To actually generate random numbers we will look at more sophisticated algorithms that handle RNG much better.
->>>>>>> Stashed changes
