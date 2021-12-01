@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
-  "APC_randomness"
+  "APC_randomness.exe"
+  "APC_randomness.exe.manifest"
   "APC_randomness.pdb"
-  "CMakeFiles/APC_randomness.dir/examples/cpp11rand.cpp.o"
-  "CMakeFiles/APC_randomness.dir/examples/std_rand.cpp.o"
+  "CMakeFiles/APC_randomness.dir/examples/cpp11rand.cpp.obj"
+  "CMakeFiles/APC_randomness.dir/examples/cpp11rand.cpp.obj.d"
+  "CMakeFiles/APC_randomness.dir/examples/std_rand.cpp.obj"
+  "CMakeFiles/APC_randomness.dir/examples/std_rand.cpp.obj.d"
+  "libAPC_randomness.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

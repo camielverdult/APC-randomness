@@ -6,5 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 include_directories(examples)
 
-add_executable(APC_randomness
-        examples/std_rand.cpp examples/cpp11rand.cpp)
+add_executable(std_rand_example
+        examples/std_rand.cpp)
+
+add_executable(cpp11_rand_example examples/cpp11rand.cpp)
