@@ -30,7 +30,6 @@ int main() {
 >>>>>>> 3b65abd93e451a294d1b55169a927942e4b4c308
 
         if(a == -1){
-            std::cout << "Quitting program.";
             std::cout << "Quitting program." << std::endl;
             return 0;
         }
