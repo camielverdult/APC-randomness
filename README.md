@@ -56,12 +56,9 @@ Here is an example of the output of this function with different parameters:
 
 ### Mersenne Twister
 
-| engine                                                                                        | name in <random>           | Speed     | Storage | Characteristics | Randomness comment                             |
-|-----------------------------------------------------------------------------------------------|----------------------------|-----------|---------|-----------------|------------------------------------------------|
-| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)            | linear_congruential_engine | Very fast | Greater | "Meh"           |
-| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                            | mersenne_twister_engine    | Moderate  | A lot   | "Damn"          | Period length is chosen to be a Mersenne prime |
-| [Subtract with carry](https://en.wikipedia.org/wiki/Subtract_with_carry) AKA Lagged Fibonacci | subtract_with_carry_engine |           |         |                 |
+..
 
+# Code examples
 
 ## Example 1: std::rand() 
 #### See the code in std_rand.cpp
