@@ -20,25 +20,26 @@ int main()
             return 0;
         }
 
-        // Here we use the following values to initialize our engine:
-        // modulus m: 2^32 + 1
-        const unsigned long m = 65536 + 1;
+        // short_lag S
+        const unsigned long short_lag = 128;
 
-        // multiplier a: 75
-        const unsigned long a = 75;
+        // long_lag L
+        const unsigned long long_lag = 159;
 
-        // increment c: 74
-        const unsigned long c = 74;
+        // w: word size
+        const unsigned long word_size = 32;
 
-        std::linear_congruential_engine<unsigned long, a, c, m> lcg;
+        std::subtract_with_carry_engine<unsigned long, word_size, short_lag, long_lag> swc;
 
-        lcg.seed(seed);
+        swc.seed(seed);
 
         // roll 6-sided dice 10 times
         for (int n = 0; n < 10; ++n) {
             unsigned int x = 7;
             while(x > 6) {
-                x = 1 + lcg() / (m / 6);
+
+                // Word size is 32, so we divide our output by 2^32, then by 6 to get values from <0, 6>
+                x = 1 + swc() / (4294967296 / 6);
                 std::cout << x << ' ';
             }
         }

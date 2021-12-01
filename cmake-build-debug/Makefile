@@ -141,6 +141,19 @@ linear_congruential_example/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\linear_congruential_example.dir\build.make CMakeFiles/linear_congruential_example.dir/build
 .PHONY : linear_congruential_example/fast
 
+#=============================================================================
+# Target rules for targets named subtract_with_carry_example
+
+# Build rule for target.
+subtract_with_carry_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 subtract_with_carry_example
+.PHONY : subtract_with_carry_example
+
+# fast build rule for target.
+subtract_with_carry_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\subtract_with_carry_example.dir\build.make CMakeFiles/subtract_with_carry_example.dir/build
+.PHONY : subtract_with_carry_example/fast
+
 examples/linear_congruential.obj: examples/linear_congruential.cpp.obj
 .PHONY : examples/linear_congruential.obj
 
@@ -189,6 +202,30 @@ examples/std_rand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\std_rand_example.dir\build.make CMakeFiles/std_rand_example.dir/examples/std_rand.cpp.s
 .PHONY : examples/std_rand.cpp.s
 
+examples/subtract_with_carry_example.obj: examples/subtract_with_carry_example.cpp.obj
+.PHONY : examples/subtract_with_carry_example.obj
+
+# target to build an object file
+examples/subtract_with_carry_example.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\subtract_with_carry_example.dir\build.make CMakeFiles/subtract_with_carry_example.dir/examples/subtract_with_carry_example.cpp.obj
+.PHONY : examples/subtract_with_carry_example.cpp.obj
+
+examples/subtract_with_carry_example.i: examples/subtract_with_carry_example.cpp.i
+.PHONY : examples/subtract_with_carry_example.i
+
+# target to preprocess a source file
+examples/subtract_with_carry_example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\subtract_with_carry_example.dir\build.make CMakeFiles/subtract_with_carry_example.dir/examples/subtract_with_carry_example.cpp.i
+.PHONY : examples/subtract_with_carry_example.cpp.i
+
+examples/subtract_with_carry_example.s: examples/subtract_with_carry_example.cpp.s
+.PHONY : examples/subtract_with_carry_example.s
+
+# target to generate assembly for a file
+examples/subtract_with_carry_example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\subtract_with_carry_example.dir\build.make CMakeFiles/subtract_with_carry_example.dir/examples/subtract_with_carry_example.cpp.s
+.PHONY : examples/subtract_with_carry_example.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -199,12 +236,16 @@ help:
 	@echo ... rebuild_cache
 	@echo ... linear_congruential_example
 	@echo ... std_rand_example
+	@echo ... subtract_with_carry_example
 	@echo ... examples/linear_congruential.obj
 	@echo ... examples/linear_congruential.i
 	@echo ... examples/linear_congruential.s
 	@echo ... examples/std_rand.obj
 	@echo ... examples/std_rand.i
 	@echo ... examples/std_rand.s
+	@echo ... examples/subtract_with_carry_example.obj
+	@echo ... examples/subtract_with_carry_example.i
+	@echo ... examples/subtract_with_carry_example.s
 .PHONY : help
 
 
