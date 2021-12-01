@@ -27,11 +27,8 @@ int main() {
         std::cout << "Using seed: " << a << std::endl;
 
         if(a == -1){
-<<<<<<< HEAD
             std::cout << "Quitting program." << std::endl;
-=======
-            std::cout << "Quitting program.";
->>>>>>> parent of e0552a8 (Update std_rand.cpp)
+
             return 0;
         }
 
