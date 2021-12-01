@@ -17,22 +17,22 @@ int main() {
 //    std::cout << "Random value on [0 " << RAND_MAX << "]: "
 //              << random_variable << '\n';
 
-    long long a = 0;
+    long long seed = 0;
 
-    while(a != -1){
+    while(seed != -1){
 
         std::cout << "Enter a number to use as seed (enter '-1' to exit program):";
-        std::cin >> a;
+        std::cin >> seed;
         std::cout << std::endl;
-        std::cout << "Using seed: " << a << std::endl;
+        std::cout << "Using seed: " << seed << std::endl;
 
-        if(a == -1){
+        if(seed == -1){
             std::cout << "Quitting program." << std::endl;
 
             return 0;
         }
 
-        srand(a);
+        std::srand(seed);
 
         // roll 6-sided dice 10 times
         for (int n=0; n < 10; ++n) {
