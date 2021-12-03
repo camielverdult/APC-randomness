@@ -195,8 +195,9 @@ When rewriting this expression to a recurrence relation ()
 ## Example 1: std::rand() 
 #### See the code in std_rand.cpp
 
-std::rand() is the most basic of random number generators used in programming. This function uses a seed to create a pseudo-random output of numbers.
-Breaking this function down however, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
+std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
+The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
+Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
 
 In the example program you are asked to enter a value that will be used as the seed for the RNG.
 If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
