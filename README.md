@@ -116,6 +116,10 @@ Examples of these values (for example for MT19937-64):
 - (t, c) = (37, FFF7EEE00000000016)
 - l = 43
 
+Adding this to our flow-chart, we get a global overview of how we get from seed to random number:
+
+![](imgs/mersenne_twist_complete.svg)
+
 An implementation of the Mersenne Twister algorithm in Python could look like [this](https://github.com/yinengy/Mersenne-Twister-in-Python/blob/master/MT19937.py):
 
 ```py
@@ -129,7 +133,7 @@ l = 18
 f = 1812433253
 
 
-# make a arry to store the state of the generator
+# make an array to store the state of the generator
 MT = [0 for i in range(n)]
 index = n+1
 lower_mask = 0x7FFFFFFF #(1 << r) - 1 // That is, the binary number of r 1's
@@ -182,9 +186,9 @@ if __name__ == '__main__':
 
 ### Lagged Fibonacci generator
 
-This generator is based on the expression in the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number)
+This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
 
-
+When rewriting this expression to a recurrence relation ()
 
 # Code examples
 
