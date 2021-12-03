@@ -58,7 +58,23 @@ Here is an example of the output of this function with different parameters:
 
 ### Mersenne Twister
 
-..
+The mersenne twister random number generator gets it name from using the Mersenne prime (2<sup>19937</sup> - 1) for calculating the next batch of random numbers. The math behind the Mersenne twister RNG is very abstract and probably beyond the scope of this overview. Nonetheless, we will try to give a basic explanation of the way this algorithm calculates random numbers.
+
+#### Mersenne Twister Algorithm
+
+To establish the initialization stage for the Mersenne Twister, we have to understand what this algorithm does. To visualize this, we made a high-level flow chart showing you the initialization stage and what happens after running the algorithm: 
+
+![](imgs/mersenne_twister_high_level.svg)
+
+After deciding on a seed, the initial Mersenne array can be calculated for an array of _n_ values of _w_ bits each. To initialize an array, you start with setting the value of x<sub>0</sub> to be your chosen seed, then you use the following formula to calculate the initial array:
+
+_x<sub>i</sub> = f × (x<sub>i</sub>−1 ⊕ (x<sub>i</sub>−1 >> (w − 2))) + i_
+
+Taking this formula into account in our flow-chart would look like this:
+
+![](imgs/mersenne_twister_initialization.svg)
+
+
 
 # Code examples
 
