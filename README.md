@@ -191,15 +191,18 @@ This generator is based on the expression in the [Fibonacci Sequence](https://en
 ## Example 1: std::rand() 
 #### See the code in std_rand.cpp
 
-std::rand() is the first and most basic of random number generators used in programming. This function uses a seed to create a pseudo-random output of numbers.
+std::rand() is the most basic of random number generators used in programming. This function uses a seed to create a pseudo-random output of numbers.
 Breaking this function down however, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
 
 In the example program you are asked to enter a value that will be used as the seed for the RNG.
 If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
 std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
 
-Considering this, we can conclude that std::rand() by itself is not random at all.
-To actually generate random numbers we will look at more sophisticated algorithms that handle RNG much better.
+This is the main drawback of all pseudo-random number generators. While they generate a fairly random output sequence,
+they rely solely on getting a different seed everytime to stay random over time.
+To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
+This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
+the output will always be different.
 
 
 ### Sources

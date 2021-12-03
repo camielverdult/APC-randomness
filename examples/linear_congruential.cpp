@@ -11,14 +11,7 @@ int main()
     while(true){
 
         // Here we use the following values to initialize our engine:
-        // modulus m: 2^32 + 1
-//        const unsigned long m = 65536 + 1;
-//
-//        // multiplier a: 75
-//        const unsigned long a = 75;
-//
-//        // increment c: 74
-//        const unsigned long c = 74;
+        // These values come from glibc (used by GCC)
 
         //modulus m: 2^31 - 1
         const unsigned long m = 2147483647;
