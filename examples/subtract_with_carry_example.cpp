@@ -44,13 +44,8 @@ int main()
             std::cout << "Using seed: " << (int)time(nullptr) << std::endl;
             swc.seed((int)time(nullptr));
         }
-        else{
-            std::cout << "Using seed: " << seed << std::endl;
-            std::srand(seed);
-        }
 
-
-
+        std::cout << "Using seed: " << seed << std::endl;
 
         swc.seed(seed);
 
