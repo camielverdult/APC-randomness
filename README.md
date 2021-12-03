@@ -202,7 +202,7 @@ if __name__ == '__main__':
 
 ```
 
-### Lagged Fibonacci generator
+### Lagged Fibonacci
 
 This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
 
