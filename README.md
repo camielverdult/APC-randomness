@@ -76,9 +76,31 @@ Taking this formula into account in our flow-chart would look like this:
 
 Now that there is an initialized array, we can apply our Mersenne twist onto it to get random numbers. This twist function looks like this:
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/aac48eb29f62ea01dbfa423a078f8bca04caefcb)
+![See drawings/twister.text](imgs/mersennse_twister_twist.svg)
 
-The behaviour of this twister is heavily decided by the parameters used  
+The behaviour of this twister is heavily decided by the parameters used, the parameters are described as following:
+
+- w: word size (in number of bits)
+- n: degree of recurrence
+- m: middle word, an offset used in the recurrence relation defining the series x, 1 ≤ m < n
+- r: separation point of one word, or the number of bits of the lower bitmask, 0 ≤ r ≤ w − 1
+- a: coefficients of the rational normal form twist matrix
+- b, c: TGFSR(R) tempering bitmasks
+- s, t: TGFSR(R) tempering bit shifts
+- u, d, l: additional Mersenne Twister tempering bit shifts/masks
+
+Examples of these values (for example for MT19937-64):
+
+- (w, n, m, r) = (64, 312, 156, 31)
+- a = B5026F5AA96619E916
+- (u, d) = (29, 555555555555555516)
+- (s, b) = (17, 71D67FFFEDA6000016)
+- (t, c) = (37, FFF7EEE00000000016)
+- l = 43
+
+Taking all of this into account, we get the following flow-chart:
+
+![](imgs/mersenne_twist_complete.svg)
 
 # Code examples
 
