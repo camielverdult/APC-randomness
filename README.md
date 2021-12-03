@@ -80,7 +80,7 @@ Now that there is an initialized array, we can apply our Mersenne twist onto it 
 
 Taking all of this into account, we get the following flow-chart:
 
-![](imgs/mersenne_twist_complete.svg)
+![](imgs/mersenne_twist_almost_complete.svg)
 
 After this, our array result is cascaded into one random number. This transformation looks like this:
 
