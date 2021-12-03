@@ -188,7 +188,11 @@ if __name__ == '__main__':
 
 This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
 
-When rewriting this expression to a recurrence relation ()
+When rewriting this expression to a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation) (a model describing the relation between states), we get to the following expression:
+
+_S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
+
+
 
 # Code examples
 
@@ -215,3 +219,8 @@ the output will always be different.
 - https://en.wikipedia.org/wiki/Subtract_with_carry
 - https://en.wikipedia.org/wiki/Mersenne_Twister
 - https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator
+
+TODO:
+- grafieken met output van verschillende rng
+- hardware rng
+- https://en.wikipedia.org/wiki/Diehard_tests
