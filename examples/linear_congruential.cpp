@@ -32,15 +32,10 @@ int main()
             return 0;
         }
         else if(seed == 0){
-            std::cout << "Using seed: " << (int)time(nullptr) << std::endl;
             lcg.seed((int)time(nullptr));
         }
-        else{
-            std::cout << "Using seed: " << seed << std::endl;
-            std::srand(seed);
-        }
 
-
+        std::cout << "Using seed: " << seed << std::endl;
 
         lcg.seed(seed);
 
