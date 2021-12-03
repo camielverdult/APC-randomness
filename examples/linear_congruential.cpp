@@ -12,13 +12,23 @@ int main()
 
         // Here we use the following values to initialize our engine:
         // modulus m: 2^32 + 1
-        const unsigned long m = 65536 + 1;
+//        const unsigned long m = 65536 + 1;
+//
+//        // multiplier a: 75
+//        const unsigned long a = 75;
+//
+//        // increment c: 74
+//        const unsigned long c = 74;
 
-        // multiplier a: 75
-        const unsigned long a = 75;
+        //modulus m: 2^31 - 1
+        const unsigned long m = 2147483647;
+
+        //multiplier a: 1103515245
+        const unsigned long a = 1103515245;
 
         // increment c: 74
-        const unsigned long c = 74;
+        const unsigned long c = 12345;
+
 
         std::linear_congruential_engine<unsigned long, a, c, m> lcg;
 
@@ -32,7 +42,7 @@ int main()
             return 0;
         }
         else if(seed == 0){
-            lcg.seed((int)time(nullptr));
+            seed = (int)time(nullptr);
         }
 
         std::cout << "Using seed: " << seed << std::endl;

@@ -41,8 +41,7 @@ int main()
             return 0;
         }
         else if(seed == 0){
-            std::cout << "Using seed: " << (int)time(nullptr) << std::endl;
-            swc.seed((int)time(nullptr));
+            seed = (int)time(nullptr);
         }
 
         std::cout << "Using seed: " << seed << std::endl;
