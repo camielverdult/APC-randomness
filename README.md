@@ -220,6 +220,7 @@ the output will always be different.
 - https://en.wikipedia.org/wiki/Subtract_with_carry
 - https://en.wikipedia.org/wiki/Mersenne_Twister
 - https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator
+- https://en.wikipedia.org/wiki/Modulo_operation#Performance_issues
 
 TODO:
 - grafieken met output van verschillende rng
