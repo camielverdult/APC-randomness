@@ -120,8 +120,7 @@ To actually generate random numbers we will look at more sophisticated algorithm
 
 ### Sources
 
-https://en.cppreference.com/w/cpp/numeric/random/subtract_with_carry_engine
-
-https://en.wikipedia.org/wiki/Subtract_with_carry
-
-https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator
+- https://en.cppreference.com/w/cpp/numeric/random/subtract_with_carry_engine
+- https://en.wikipedia.org/wiki/Subtract_with_carry
+- https://en.wikipedia.org/wiki/Mersenne_Twister
+- https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator
