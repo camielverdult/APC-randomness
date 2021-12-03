@@ -43,7 +43,7 @@ int main() {
          * LCG(n+1) = a * Xn + c mod m
          *
          * The only difference being that the glibc implementation uses an & bitwise operation instead of a modulo operation
-         * The reason for this is simple:
+         * The reason for this is simple: https://en.wikipedia.org/wiki/Modulo_operation#Performance_issues
          *
          * Modulo operations might be implemented such that a division with a remainder is calculated each time.
          * For special cases, on some hardware, faster alternatives exist. For example, the modulo of powers of 2 can alternatively
