@@ -74,7 +74,11 @@ Taking this formula into account in our flow-chart would look like this:
 
 ![](imgs/mersenne_twister_initialization.svg)
 
+Now that there is an initialized array, we can apply our Mersenne twist onto it to get random numbers. This twist function looks like this:
 
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/aac48eb29f62ea01dbfa423a078f8bca04caefcb)
+
+The behaviour of this twister is heavily decided by the parameters used  
 
 # Code examples
 
