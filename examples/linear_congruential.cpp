@@ -8,17 +8,7 @@ int main()
 
     long long seed = 0;
 
-    while(seed != -1){
-
-        std::cout << "Enter a number to use as seed (enter '-1' to exit program):";
-        std::cin >> seed;
-        std::cout << std::endl;
-        std::cout << "Using seed: " << seed << std::endl;
-
-        if(seed == -1){
-            std::cout << "Quitting program.";
-            return 0;
-        }
+    while(true){
 
         // Here we use the following values to initialize our engine:
         // modulus m: 2^32 + 1
@@ -31,6 +21,26 @@ int main()
         const unsigned long c = 74;
 
         std::linear_congruential_engine<unsigned long, a, c, m> lcg;
+
+
+        std::cout << "Enter a number to use as seed \n\t- enter '0' to use auto-generate seed\n\t- enter '-1' to exit program: ";
+        std::cin >> seed;
+        std::cout << std::endl;
+
+        if(seed == -1){
+            std::cout << "Quitting program." << std::endl;
+            return 0;
+        }
+        else if(seed == 0){
+            std::cout << "Using seed: " << (int)time(nullptr) << std::endl;
+            lcg.seed((int)time(nullptr));
+        }
+        else{
+            std::cout << "Using seed: " << seed << std::endl;
+            std::srand(seed);
+        }
+
+
 
         lcg.seed(seed);
 

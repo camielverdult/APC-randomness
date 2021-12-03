@@ -10,15 +10,15 @@ int main()
 
     while(seed != -1){
 
-        std::cout << "Enter a number to use as seed (enter '-1' to exit program):";
-        std::cin >> seed;
-        std::cout << std::endl;
-        std::cout << "Using seed: " << seed << std::endl;
-
-        if(seed == -1){
-            std::cout << "Quitting program.";
-            return 0;
-        }
+//        std::cout << "Enter a number to use as seed (enter '-1' to exit program): ";
+//        std::cin >> seed;
+//        std::cout << std::endl;
+//
+//        if(seed == -1){
+//            std::cout << "Quitting program.";
+//            return 0;
+//        }
+//        std::cout << "Using seed: " << seed << std::endl;
 
         // short_lag S
         const unsigned long short_lag = 128;
@@ -30,6 +30,27 @@ int main()
         const unsigned long word_size = 32;
 
         std::subtract_with_carry_engine<unsigned long, word_size, short_lag, long_lag> swc;
+
+
+        std::cout << "Enter a number to use as seed \n\t- enter '0' to use auto-generate seed\n\t- enter '-1' to exit program: ";
+        std::cin >> seed;
+        std::cout << std::endl;
+
+        if(seed == -1){
+            std::cout << "Quitting program." << std::endl;
+            return 0;
+        }
+        else if(seed == 0){
+            std::cout << "Using seed: " << (int)time(nullptr) << std::endl;
+            swc.seed((int)time(nullptr));
+        }
+        else{
+            std::cout << "Using seed: " << seed << std::endl;
+            std::srand(seed);
+        }
+
+
+
 
         swc.seed(seed);
 
