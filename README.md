@@ -56,6 +56,24 @@ Here is an example of the output of this function with different parameters:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
 
+#### Example 1: std::rand(), see the code in std_rand.cpp
+
+std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
+The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
+Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
+
+In the example program you are asked to enter a value that will be used as the seed for the RNG.
+If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
+std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
+
+This is the main drawback of all pseudo-random number generators. While they generate a fairly random output sequence,
+they rely solely on getting a different seed everytime to stay random over time.
+To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
+This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
+the output will always be different.
+
+
+
 ### Mersenne Twister
 
 The mersenne twister random number generator gets it name from using the Mersenne prime (2<sup>19937</sup> - 1) for calculating the next batch of random numbers. The math behind the Mersenne twister RNG is very abstract and probably beyond the scope of this overview. Nonetheless, we will try to give a basic explanation of the way this algorithm calculates random numbers.
@@ -196,22 +214,6 @@ _S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
 
 # Code examples
 
-## Example 1: std::rand() 
-#### See the code in std_rand.cpp
-
-std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
-The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
-Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
-
-In the example program you are asked to enter a value that will be used as the seed for the RNG.
-If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
-std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
-
-This is the main drawback of all pseudo-random number generators. While they generate a fairly random output sequence,
-they rely solely on getting a different seed everytime to stay random over time.
-To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
-This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
-the output will always be different.
 
 
 ### Sources
