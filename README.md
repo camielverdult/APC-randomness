@@ -215,14 +215,14 @@ The subtract with carry expands on this by subtracting a cy(i-1)
 ## Hardware random number generator
 
 Since in the field of programming we're bound to computer's logic and algorithms, generating true random numbers is near impossible.
-To achieve true randomness, we need to step away from software and move into the realm of hardware. 
-In this case hardware does not refer to logic gates and zeros and ones, but to sensors measuring natural, mostly quantum related, events.
+To achieve true randomness, we need move over to hardware, and even step into the realm of quantum physics.
 
 Hardware random number generators generally make use of a transducer to convert an aspect of a physical phenomenon to an electrical signal, an amplifier to increase the random fluctuations to a measurable level,
 and an analog to digital converter to convert the signal to a digital value, so it can be used in further processing by digital devices.
 The two most used types of phenomena in hardware RNGs are quantum mechanics at atomic or sub-atomic level and thermal noise(which has part of its origin in the quantum field).
 
-Quantum mechanics 
+Quantum mechanics states that the nuclear decay of atoms is fundamentally random and cannot be predicted.
+
 
 
 ### Sources
@@ -232,6 +232,7 @@ Quantum mechanics
 - https://en.wikipedia.org/wiki/Mersenne_Twister
 - https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator
 - https://en.wikipedia.org/wiki/Modulo_operation#Performance_issues
+- https://en.wikipedia.org/wiki/Hardware_random_number_generator
 
 TODO:
 - grafieken met output van verschillende rng
