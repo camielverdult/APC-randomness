@@ -17,7 +17,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72f9c24-efd7-4758-bea3-892c75fe1777" name="Changes" comment="" />
+    <list default="true" id="d72f9c24-efd7-4758-bea3-892c75fe1777" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/linear_congruential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/linear_congruential.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/subtract_with_carry_example.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/subtract_with_carry_example.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +56,7 @@
       <recent name="C:\Data\Saxion\Jaar 2\APC\APC-randomness\examples" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="CMake Application.std_rand_example">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -63,6 +68,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+=======
+  <component name="RunManager" selected="CMake Application.linear_congruential_example">
+>>>>>>> Stashed changes
     <configuration name="gradient_noise_test1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="APC_randomness" TARGET_NAME="gradient_noise_test1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="APC_randomness" RUN_TARGET_NAME="gradient_noise_test1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -83,6 +91,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="APC_randomness" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +141,12 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
+=======
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+>>>>>>> Stashed changes
     </configuration>
     <list>
       <item itemvalue="CMake Application.gradient_noise_test1" />
@@ -167,5 +182,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
