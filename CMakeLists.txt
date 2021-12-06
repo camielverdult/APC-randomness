@@ -11,6 +11,6 @@ add_executable(linear_congruential_example examples/linear_congruential.cpp)
 
 add_executable(subtract_with_carry_example examples/subtract_with_carry_example.cpp)
 
-add_executable(gradient_noise_test1 examples/gradient_noise_test1.cpp)
+add_executable(gradient_noise_test1 examples/gradient_noise_test1.cpp examples/gradient_noise_test1.h)
 
 add_executable(mersenne_twister_example examples/mersenne_twister.cpp)
