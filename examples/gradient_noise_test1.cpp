@@ -4,14 +4,30 @@
 
 #include <cmath>
 #include <cstdio>
+#include <random>
+
+//modulus m: 2^31 - 1
+const unsigned long m = 2147483647;
+
+//multiplier a: 1103515245
+const unsigned long a = 1103515245;
+
+// increment c: 74
+const unsigned long c = 12345;
+
+
+std::linear_congruential_engine<unsigned long, a, c, m> lcg;
+
 
 unsigned int hash(unsigned int a) {
-    a = (a ^ 61) ^ (a >> 16);
-    a = a + (a << 3);
-    a = a ^ (a >> 4);
-    a = a * 0x27d4eb2d;
-    a = a ^ (a >> 15);
-    return a;
+//    a = (a ^ 61) ^ (a >> 16);
+//    a = a + (a << 3);
+//    a = a ^ (a >> 4);
+//    a = a * 0x27d4eb2d;
+//    a = a ^ (a >> 15);
+//    srand(a);
+    lcg.seed(a);
+    return lcg();
 }
 
 unsigned int ivalue(int x, int y) {
@@ -54,7 +70,7 @@ int main() {
         }
     }
 
-    FILE *f = fopen("x.pnm", "wb");
+    FILE *f = fopen("gradient_noise_lcg.pnm", "wb");
     fprintf(f, "P5\n1024 1024\n255\n");
     fwrite(pic, 1, 1024*1024, f);
     fclose(f);
