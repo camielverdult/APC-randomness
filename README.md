@@ -214,7 +214,11 @@ The subtract with carry expands on this by subtracting a cy(i-1)
 
 ## Cryptographically strong random number generators
 
-All of the aforementioned random number generators above have one common flaw: 
+All the aforementioned random number generators above have one common flaw: they are based on a linear/recurring change of the internal state. With enough time and testing, you could predict what the next or previous value will be. 
+
+Let's put this into an example where we can understand why random numbers are so important; If we want to use the internet securely, we need to generate numbers used for encrypting and decrypting data between two people (or two servers) on the internet. If the method of generating these random numbers used to encrypt our data is flawed (or easily to reverse), people (or, again, servers) could steal crucial data like credit card information, medical data or our most private secrets. This is of course not what we want and why we don't use pseudo-random number generators where real randomness is critical. 
+
+Instead of using pseudo-random random number generators, we use cryptographically strong random number generators. These have the same properties
 
 ## Hardware random number generator
 
@@ -223,7 +227,7 @@ To achieve true randomness, we need move over to hardware, and even step into th
 
 Hardware random number generators generally make use of a transducer to convert an aspect of a physical phenomenon to an electrical signal, an amplifier to increase the random fluctuations to a measurable level,
 and an analog to digital converter to convert the signal to a digital value, so it can be used in further processing by digital devices.
-The two most used types of phenomena in hardware RNGs are quantum mechanics at atomic or sub-atomic level and thermal noise(which has part of its origin in the quantum field).
+The two most used types of phenomena in hardware RNGs are quantum mechanics at atomic or subatomic level and thermal noise(which has part of its origin in the quantum field).
 
 Quantum mechanics states that the nuclear decay of atoms is fundamentally random and cannot be predicted.
 
