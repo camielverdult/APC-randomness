@@ -4,7 +4,7 @@
 
 ## True randomness and how to get it
 
-Random number generation is a tough if not impossible thing to do. That’s why we have the best next thing, pseudorandom number generators. You’ll learn why the C library rand() is not random at all and what alternatives there are. You’ll investigate the properties of different pseudorandom numbers generating algorithms, find out what cryptographically-strong PRNGs are and be able to show really cool looking graphs for others to admire! And of course you’ll add a couple of new terms to your vocabulary like Mersenne Twister or permuted congruential generator that are guaranteed to impress just about everybody during a family dinner.
+Random number generation is a tough if not impossible thing to do. That’s why we have the best next thing, pseudorandom number generators. You’ll learn why the C library rand() is not random at all and what alternatives there are. You’ll investigate the properties of different pseudorandom numbers generating algorithms, find out what cryptographically-strong PRNGs are and be able to show really cool looking graphs for others to admire! And of course you’ll add a couple of new terms to your vocabulary like Mersenne twister or Linear congruential generator that are guaranteed to impress just about everybody during a family dinner.
 
 ## Project use explanation
 
@@ -31,9 +31,9 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 ### Linear Congruential
 
 The linear congruential random number generation uses a piecewise linear function (AKA several linear formulas, the one being used is dependent on parameters provided to the function). For the LCG, this formula is the following:
-```
-X(n+1) = (aXn + c) % m
-```
+
+X<sub>n+1</sub> = (a * X<sub>n</sub> + c) % m
+
 where: 
 - m: modulus
 - a: multiplier
@@ -210,7 +210,9 @@ When rewriting this expression to a [recurrence relation](https://en.wikipedia.o
 
 _S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
 
-The subtract with carry expands on this by subtracting a cy(i-1)
+The subtract with carry expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
+
+x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % M where cy = 
 
 ## Cryptographically strong random number generators
 
@@ -240,3 +242,4 @@ Quantum mechanics states that the nuclear decay of atoms is fundamentally random
 - https://en.wikipedia.org/wiki/Modulo_operation#Performance_issues
 - https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator
 - https://en.wikipedia.org/wiki/Hardware_random_number_generator
+- https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine
