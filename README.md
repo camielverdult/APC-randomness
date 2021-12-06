@@ -60,8 +60,6 @@ Here is an example of the output of this function with different parameters:
 Here is the output of the Linear congruential engine as generated in gradient_noise.cpp:
 ![](imgs/gradient_noise_lcg.png)
 
-<img src="imgs/gradient_noise_lcg.png" alt="drawing" width="1024" height="1024"> 
-
 And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
 ![](imgs/lcg_color.png)
 
@@ -216,9 +214,17 @@ if __name__ == '__main__':
 
 ```
 
-#### Example 3: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
+Here is the output of the Mersenne twister engine as generated in gradient_noise.cpp:
+![](imgs/gradient_noise_mt.png)
 
-This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
+And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
+![](imgs/mt_color.png)
+
+![](imgs/mt_landscape.png)
+
+#### Example 3: `std::mersenne_twister_engine`, see the code in mersenne_twister.cpp
+
+This code example demonstrates the built in `std::mersenne_twister_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
 
 
 ### Lagged Fibonacci / Subtract with Carry
