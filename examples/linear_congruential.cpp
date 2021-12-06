@@ -25,7 +25,6 @@ int main()
 
         std::linear_congruential_engine<unsigned long, a, c, m> lcg;
 
-
         std::cout << "Enter a number to use as seed \n\t- enter '0' to use auto-generate seed\n\t- enter '-1' to exit program: ";
         std::cin >> seed;
         std::cout << std::endl;
