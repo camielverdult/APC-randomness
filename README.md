@@ -320,7 +320,7 @@ Hardware random number generators generally make use of a transducer to convert 
 and an analog to digital converter to convert the signal to a digital value, so it can be used in further processing by digital devices.
 The two most used types of phenomena in hardware RNGs are quantum mechanics at atomic or subatomic level and thermal noise(which has part of its origin in the quantum field).
 
-Measuring the fluctuations in these processes and using them to generate sequences of numbers, we can finally achieve true randomness.
+Only by measuring the fluctuations in these processes and using them to generate sequences of numbers, we can achieve true randomness.
 
 ### Sources
 
