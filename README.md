@@ -57,6 +57,12 @@ Here is an example of the output of this function with different parameters:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
 
+Here is a visualization of the output of a Linear congruential random number generator in color and as a landscape.
+
+![](imgs/lcg_color.png)
+
+![](imgs/lcg_landscape.png)
+
 #### Example 1: `std::rand()`, see the code in std_rand.cpp
 
 std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
@@ -233,6 +239,12 @@ An example of values to use in the formula is `ranlux48_base`, these describe th
 - W = 48
 - S = 5
 - R = 12
+
+Here is a visualization of the output of a Subtract with Carry random number generator in color and as a landscape.
+
+![](imgs/swc_color.png)
+
+![](imgs/swc_landscape.png)
 
 #### Example 4: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
 
