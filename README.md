@@ -56,7 +56,7 @@ Here is an example of the output of this function with different parameters:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
 
-#### Example 1: std::rand(), see the code in std_rand.cpp
+#### Example 1: `std::rand()`, see the code in std_rand.cpp
 
 std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
 The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
@@ -71,6 +71,10 @@ they rely solely on getting a different seed everytime to stay random over time.
 To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
 This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
 the output will always be different.
+
+#### Example 2: `std::linear_congruential_engine`, see the code in linear_congruential.cpp
+
+This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::linear_congruential_engine` generating the dice outcome.
 
 
 
@@ -202,6 +206,11 @@ if __name__ == '__main__':
 
 ```
 
+#### Example 3: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
+
+This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome.
+
+
 ### Lagged Fibonacci / Subtract with Carry
 
 This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
@@ -224,6 +233,11 @@ An example of values to use in the formula is `ranlux48_base`, these describe th
 - W = 48
 - S = 5
 - R = 12
+
+#### Example 4: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
+
+This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
+
 
 ## Cryptographically strong random number generators
 
