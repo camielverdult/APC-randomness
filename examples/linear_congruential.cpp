@@ -26,7 +26,6 @@ int main()
 
         std::linear_congruential_engine<unsigned long, a, c, m> lcg;
 
-
         std::cout << "Enter a number to use as seed \n\t- enter '0' to use auto-generate seed\n\t- enter '-1' to exit program: ";
         std::cin >> seed;
         std::cout << std::endl;
@@ -42,10 +41,6 @@ int main()
         std::cout << "Using seed: " << seed << std::endl;
 
         lcg.seed(seed);
-
-        std::function<unsigned long()> random = lcg;
-
-        noise_mapper mapper(1024, "../linear_congruential.pnm", random);
 
         // roll 6-sided dice 10 times
         for (int n = 0; n < 10; ++n) {
