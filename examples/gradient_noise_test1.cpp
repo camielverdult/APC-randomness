@@ -164,8 +164,7 @@ int main() {
             break;
         default:
             std::cout << "Invalid choice" << std::endl;
-            break;
-
+            return 0;
     }
 
     std::string filename = "gradient_noise_" + engine + ".pnm";
