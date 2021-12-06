@@ -247,8 +247,7 @@ if __name__ == '__main__':
 
 ```
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
 Here is the output of the Mersenne twister engine as generated in gradient_noise.cpp:
 ![](imgs/gradient_noise_mt.png)
 
@@ -256,20 +255,20 @@ And here is a visualization of a 3D output in color and as a landscape where the
 ![](imgs/mt_color.png)
 
 ![](imgs/mt_landscape.png)
-=======
+
 Here is a visualization of the output of a Mersenne twister random number generator in color and as a landscape.
 
->>>>>>> Stashed changes
+
 
 #### Example 3: `std::mersenne_twister_engine`, see the code in mersenne_twister.cpp
-=======
+
 #### Example 4: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
->>>>>>> 79bdae0ea29f090b93d372b5b68e7f97c7656d7a
+
 
 This code example demonstrates the built in `std::mersenne_twister_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
 
 
-<<<<<<< HEAD
+
 ### Lagged Fibonacci / Subtract with Carry
 
 This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
@@ -303,8 +302,7 @@ Here is a visualization of the output of a Subtract with Carry random number gen
 
 This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
 
-=======
->>>>>>> 79bdae0ea29f090b93d372b5b68e7f97c7656d7a
+
 ## Cryptographically strong random number generators
 
 All the aforementioned random number generators above have one common flaw: they are based on a linear/recurring change of the internal state. With enough time and testing, you could predict what the next or previous value will be. 
