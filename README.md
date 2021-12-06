@@ -30,12 +30,24 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 ## In-depth overview of RNGs
 
 ### std::rand()
-
-#### Example 1: `std::rand()`, see the code in std_rand.cpp
-
-std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
+std::rand() is the first Random Number Generator you will encounter when programming. std::rand() uses a simple, yet quite optimized implementation of a linear congruential engine.
 The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
 Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
+
+Here is the output of std::rand() as generated in gradient_noise.cpp:
+
+![](imgs/gradient_noise_rand.png)
+
+And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
+
+![](imgs/rand_color.png)
+
+![](imgs/rand_landscape.png)
+
+As you can see, std::rand() does a pretty good job at generating random noise and a natural looking landscape.
+
+
+#### Example 1: `std::rand()`, see the code in std_rand.cpp
 
 In the example program you are asked to enter a value that will be used as the seed for the RNG.
 If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
@@ -77,12 +89,17 @@ Here is an example of the output of this function with different parameters:
 ![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
 
 Here is the output of the Linear congruential engine as generated in gradient_noise.cpp:
+
 ![](imgs/gradient_noise_lcg.png)
 
 And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
+
 ![](imgs/lcg_color.png)
 
 ![](imgs/lcg_landscape.png)
+
+As becomes instantly clear from the gradient noise, this implementation of the linear congruential engine suffers from a lot of repetition.
+This is not desirable, as when used in security applications, it may be easily cracked.
 
 #### Example 2: `std::linear_congruential_engine`, see the code in linear_congruential.cpp
 
@@ -111,11 +128,17 @@ An example of values to use in the formula is `ranlux48_base`, these describe th
 - S = 5
 - R = 12
 
+Here is the output of the Subtract With Carry engine as generated in gradient_noise.cpp:
+
+![](imgs/gradient_noise_swc.png)
+
 Here is a visualization of the output of a Subtract with Carry random number generator in color and as a landscape.
 
 ![](imgs/swc_color.png)
 
 ![](imgs/swc_landscape.png)
+
+As is visible from these images, there is still a lot of repetition in the gradient noise, but it is already a lot better than the linear congruential implementation.
 
 #### Example 3: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
 
@@ -252,58 +275,24 @@ if __name__ == '__main__':
 
 
 Here is the output of the Mersenne twister engine as generated in gradient_noise.cpp:
+
 ![](imgs/gradient_noise_mt.png)
 
 And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
+
 ![](imgs/mt_color.png)
 
 ![](imgs/mt_landscape.png)
 
-Here is a visualization of the output of a Mersenne twister random number generator in color and as a landscape.
+Now we are getting somewhere. These images show a nicely generated gradient noise with no distinct patterns or repetition.
 
 
-
-#### Example 3: `std::mersenne_twister_engine`, see the code in mersenne_twister.cpp
-
-#### Example 4: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
-
+#### Example 4: `std::mersenne_twister_engine`, see the code in mersenne_twister.cpp
 
 This code example demonstrates the built in `std::mersenne_twister_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
 
-
-
-### Lagged Fibonacci / Subtract with Carry
-
-This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
-
-When rewriting this expression to a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation) (a model describing the relation between states), we get to the following expression:
-
-_S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
-
-The subtract with carry random number generation method expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
-
-`x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % W where cy = 1 if x(i - S) - x(i - R) - cy(i - 1) < 0 else 0`
-
-The variables in the formula describe the following:
-- W: the word size, in bits, of the state sequence
-- S: the short lag
-- R: the long lag, where 0 < s < r
-
-An example of values to use in the formula is `ranlux48_base`, these describe the subtract with carry as the following:
-
-- W = 48
-- S = 5
-- R = 12
-
-Here is a visualization of the output of a Subtract with Carry random number generator in color and as a landscape.
-
-![](imgs/swc_color.png)
-
-![](imgs/swc_landscape.png)
-
-#### Example 4: `std::subtract_with_carry_engine`, see the code in subtract_with_carry.cpp
-
-This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
+Sadly we have still not achieved true randomness. All the engines above are still dependent on a single seed value.
+If we want to use these RNGs for anything more than pretty landscapes, we will have to do better. 
 
 
 ## Cryptographically strong random number generators
@@ -312,18 +301,22 @@ All the aforementioned random number generators above have one common flaw: they
 
 Let's put this into an example where we can understand why random numbers are so important; If we want to use the internet securely, we need to generate numbers used for encrypting and decrypting data between two people (or two servers) on the internet. If the method of generating these random numbers used to encrypt our data is flawed (or easily to reverse), people (or, again, servers) could steal crucial data like credit card information, medical data or our most private secrets. This is of course not what we want and why we don't use pseudo-random number generators where real randomness is critical. 
 
-Instead of using pseudo-random random number generators, we use cryptographically strong random number generators. Cryptographically strong random number generators can generate numbers just as a pseudo-random number generator can, but a pseudo-random number generator cannot generate the same quality of random numbers as a cryptographically strong number generator could. 
+Instead of using pseudo-random random number generators, we use cryptographically strong random number generators, or CSPRNG for short. Cryptographically strong random number generators can generate numbers just as a pseudo-random number generator can, but a pseudo-random number generator cannot generate the same quality of random numbers as a cryptographically strong number generator could. 
+Most of these CSPRNGs obtain their original seed from the operating system's randomness API, which ensures a high entropy. 
+The CSPRNG is also often re-seeded to avoid hackers from being able to obtain the original seed by means of reverse engineering.
+With these methods the CSPRNG closely approaches true randomness and is safe enough to be used in high-end encryption.
+
 
 ## Hardware random number generators
 
-Since in the field of programming we're bound to computer's logic and algorithms, generating true random numbers is near impossible.
+We have come a long way from the linear congruential engine and have almost achieved true randomness. However, since in the field of programming we're bound to computer's logic and algorithms, generating true random numbers is near impossible.
 To achieve true randomness, we need move over to hardware, and even step into the realm of quantum physics.
 
 Hardware random number generators generally make use of a transducer to convert an aspect of a physical phenomenon to an electrical signal, an amplifier to increase the random fluctuations to a measurable level,
 and an analog to digital converter to convert the signal to a digital value, so it can be used in further processing by digital devices.
 The two most used types of phenomena in hardware RNGs are quantum mechanics at atomic or subatomic level and thermal noise(which has part of its origin in the quantum field).
 
-Quantum mechanics states that the nuclear decay of atoms is fundamentally random and cannot be predicted.
+Measuring the fluctuations in these processes and using them to generate sequences of numbers, we can finally achieve true randomness.
 
 ### Sources
 
