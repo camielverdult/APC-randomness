@@ -7,12 +7,12 @@
 #include <cstdio>
 #include <iostream>
 
-noise_mapper::noise_mapper(unsigned int resolution, const std::string& filename, std::function<unsigned long()> random): m_resolution (resolution) {
+noise_mapper::noise_mapper(size_t resolution, const std::string& filename, std::function<unsigned long()> random) {
 
     unsigned char pic[resolution*resolution];
 
-    for (unsigned int y = 0; y < m_resolution; y++) {
-        for (int x = 0; x < m_resolution; x++) {
+    for (unsigned int y = 0; y < resolution; y++) {
+        for (int x = 0; x < resolution; x++) {
             float v = 0;
 
             for (int o=0; o<=9; o++) {
@@ -34,10 +34,4 @@ noise_mapper::noise_mapper(unsigned int resolution, const std::string& filename,
 
 unsigned long test() {
     return 1;
-}
-
-int main() {
-    noise_mapper mapper(16, "../noise.pnm", test);
-
-    return 0;
 }

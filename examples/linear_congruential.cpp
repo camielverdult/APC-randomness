@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <random>
+#include "noise_mapper.h"
 
 int main()
 {
@@ -42,6 +43,10 @@ int main()
 
         lcg.seed(seed);
 
+        std::function<unsigned long()> random = lcg;
+
+        noise_mapper mapper(1024, "../linear_congruential.pnm", random);
+
         // roll 6-sided dice 10 times
         for (int n = 0; n < 10; ++n) {
             unsigned int x = 7;
@@ -53,6 +58,4 @@ int main()
 
         std::cout << std::endl;
     }
-
-    return 0;
 }
