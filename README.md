@@ -21,11 +21,11 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 
 ## RNG engine summary
 
-| engine                                                                                      | name in `<random>`         | Speed     | Storage     | Characteristics                    | Randomness comment                                                                                                |
-|---------------------------------------------------------------------------------------------|----------------------------|-----------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)          | linear_congruential_engine | 🔥        | very little | Fast and easy, highly configurable | Period length is parameter dependant, smaller initialization polynomials can reduce the period length drastically |
-| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                          | mersenne_twister_engine    | Moderate  | A lot       | "Damn"                             | Period length is chosen to be a Mersenne prime                                                                    |
-| [Subtract with carry / Lagged Fibonacci](https://en.wikipedia.org/wiki/Subtract_with_carry) | subtract_with_carry_engine | Very fast | Greater     | "Meh"                              | Maximum period of (2k − 1)×2M-1 or y = xk + xj + 1                                                                |
+| engine                                                                                      | name in `<random>`         | Speed     | Storage     | Characteristics                                       | Randomness comment                                                                                                |
+|---------------------------------------------------------------------------------------------|----------------------------|-----------|-------------|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator)          | linear_congruential_engine | 🔥        | very little | Fast and easy, highly configurable                    | Period length is parameter dependant, smaller initialization polynomials can reduce the period length drastically |
+| [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)                          | mersenne_twister_engine    | Moderate  | A lot       | "Damn"                                                | Period length is chosen to be a Mersenne prime                                                                    |
+| [Subtract with carry / Lagged Fibonacci](https://en.wikipedia.org/wiki/Subtract_with_carry) | subtract_with_carry_engine | Very fast | Greater     | Also fast and easy, not meant for critical randomness | Maximum period of (2k − 1)×2M-1 or y = xk + xj + 1                                                                |
 
 ## In-depth overview of RNGs
 
@@ -311,7 +311,7 @@ Let's put this into an example where we can understand why random numbers are so
 
 Instead of using pseudo-random random number generators, we use cryptographically strong random number generators. Cryptographically strong random number generators can generate numbers just as a pseudo-random number generator can, but a pseudo-random number generator cannot generate the same quality of random numbers as a cryptographically strong number generator could. 
 
-## Hardware random number generator
+## Hardware random number generators
 
 Since in the field of programming we're bound to computer's logic and algorithms, generating true random numbers is near impossible.
 To achieve true randomness, we need move over to hardware, and even step into the realm of quantum physics.
