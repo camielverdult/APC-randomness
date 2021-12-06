@@ -29,6 +29,25 @@ The choice of which engine to use involves a number of tradeoffs: the linear con
 
 ## In-depth overview of RNGs
 
+### std::rand()
+
+#### Example 1: `std::rand()`, see the code in std_rand.cpp
+
+std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
+The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
+Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
+
+In the example program you are asked to enter a value that will be used as the seed for the RNG.
+If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
+std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
+
+This is the main drawback of all pseudo-random number generators. While they generate a fairly random output sequence,
+they rely solely on getting a different seed everytime to stay random over time.
+To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
+This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
+the output will always be different. To run this example, select the `std_rand_example` configuration.
+
+
 ### Linear Congruential
 
 The linear congruential random number generation uses a piecewise linear function (AKA several linear formulas, the one being used is dependent on parameters provided to the function). For the LCG, this formula is the following:
@@ -64,22 +83,6 @@ And here is a visualization of a 3D output in color and as a landscape where the
 ![](imgs/lcg_color.png)
 
 ![](imgs/lcg_landscape.png)
-
-#### Example 1: `std::rand()`, see the code in std_rand.cpp
-
-std::rand() is the most basic of random number generators used in programming. std::rand() uses a simple implementation of a linear congruential engine.
-The linear congruential engine, as most other engines, uses an algorithm to generate a number from the previous number in the array.
-Because the algorithm uses the seed as the start value, we see that if we supply the generator with the same seed, it generates the same exact sequence of numbers everytime.
-
-In the example program you are asked to enter a value that will be used as the seed for the RNG.
-If you play around with this a bit, you will see that the generated sequence of numbers will stay the same if you enter the same number for the seed again.
-std::rand() is dependent on a different seed everytime to generate anything close to a random sequence.
-
-This is the main drawback of all pseudo-random number generators. While they generate a fairly random output sequence,
-they rely solely on getting a different seed everytime to stay random over time.
-To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
-This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
-the output will always be different. To run this example, select the `std_rand_example` configuration.
 
 #### Example 2: `std::linear_congruential_engine`, see the code in linear_congruential.cpp
 
