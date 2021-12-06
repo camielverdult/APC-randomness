@@ -5,7 +5,7 @@
 ## True randomness and how to get it
 
 Achieving true randomness is a hard, if not impossible, task to complete. To understand why it is so complex, we will take a look at some pseudo random number generators and learn more about how random these actually are.
-We will look at multiple ways of generating random numbers, we will come to understand that most of these methods are not so random at all and we will look at what we can do to improve and approach true randomness.
+We will look at multiple ways of generating random numbers, we will come to understand that most of these methods are not so random at all, and we will look at what we can do to improve and approach true randomness.
 
 ## Project use explanation
 
@@ -86,6 +86,39 @@ the output will always be different. To run this example, select the `std_rand_e
 #### Example 2: `std::linear_congruential_engine`, see the code in linear_congruential.cpp
 
 This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::linear_congruential_engine` generating the dice outcome. To run this example, select the `linear_congruential_example` configuration.
+
+### Lagged Fibonacci / Subtract with Carry
+
+This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
+
+When rewriting this expression to a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation) (a model describing the relation between states), we get to the following expression:
+
+_S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
+
+The subtract with carry random number generation method expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
+
+`x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % W where cy = 1 if x(i - S) - x(i - R) - cy(i - 1) < 0 else 0`
+
+The variables in the formula describe the following:
+- W: the word size, in bits, of the state sequence
+- S: the short lag
+- R: the long lag, where 0 < s < r
+
+An example of values to use in the formula is `ranlux48_base`, these describe the subtract with carry as the following:
+
+- W = 48
+- S = 5
+- R = 12
+
+Here is a visualization of the output of a Subtract with Carry random number generator in color and as a landscape.
+
+![](imgs/swc_color.png)
+
+![](imgs/swc_landscape.png)
+
+#### Example 3: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
+
+This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
 
 
 ### Mersenne Twister
@@ -216,43 +249,10 @@ if __name__ == '__main__':
 
 ```
 
-#### Example 3: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
+#### Example 4: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
 
 This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
 
-
-### Lagged Fibonacci / Subtract with Carry
-
-This generator is based on the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) expression _F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n - 2</sub>_ for _n > 1_ where _F<sub>0</sub> = 0_ and _F<sub>1</sub> = 1_.
-
-When rewriting this expression to a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation) (a model describing the relation between states), we get to the following expression:
-
-_S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
-
-The subtract with carry random number generation method expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
-
-`x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % W where cy = 1 if x(i - S) - x(i - R) - cy(i - 1) < 0 else 0`
-
-The variables in the formula describe the following:
-- W: the word size, in bits, of the state sequence
-- S: the short lag
-- R: the long lag, where 0 < s < r
-
-An example of values to use in the formula is `ranlux48_base`, these describe the subtract with carry as the following:
-
-- W = 48
-- S = 5
-- R = 12
-
-Here is a visualization of the output of a Subtract with Carry random number generator in color and as a landscape.
-
-![](imgs/swc_color.png)
-
-![](imgs/swc_landscape.png)
-
-#### Example 4: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
-
-This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
 
 ## Cryptographically strong random number generators
 
