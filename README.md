@@ -57,8 +57,12 @@ Here is an example of the output of this function with different parameters:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/02/Linear_congruential_generator_visualisation.svg)
 
-Here is a visualization of the output of a Linear congruential random number generator in color and as a landscape.
+Here is the output of the Linear congruential engine as generated in gradient_noise.cpp:
+![](imgs/gradient_noise_lcg.png)
 
+<img src="imgs/gradient_noise_lcg.png" alt="drawing" width="1024" height="1024"> 
+
+And here is a visualization of a 3D output in color and as a landscape where the gradient noise is used as a height map:
 ![](imgs/lcg_color.png)
 
 ![](imgs/lcg_landscape.png)
