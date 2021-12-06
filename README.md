@@ -212,6 +212,10 @@ _S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
 
 The subtract with carry expands on this by subtracting a cy(i-1)
 
+## Cryptographically strong random number generators
+
+All of the aforementioned random number generators above have one common flaw: 
+
 ## Hardware random number generator
 
 Since in the field of programming we're bound to computer's logic and algorithms, generating true random numbers is near impossible.
