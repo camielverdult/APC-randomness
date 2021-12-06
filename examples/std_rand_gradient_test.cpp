@@ -53,8 +53,8 @@ int main() {
             float v = 0;
 
             for (int o=0; o<=9; o++) {
-                v += value(x/64.0f*(1<<o), y/64.0f*(1<<o))/(1<<o);
-                //v += rand()/(RAND_MAX/1024);
+//                v += value(x/64.0f*(1<<o), y/64.0f*(1<<o))/(1<<o);
+                v += rand()/(RAND_MAX/1024);
             }
 
             int r = rint(v*0.5f);

@@ -6,11 +6,11 @@
 #define APC_RANDOMNESS_NOISE_MAPPER_H
 
 #include <string>
-#include <memory>
+#include <functional>   // std::function, std::negate
 
 class noise_mapper {
 public:
-    noise_mapper(unsigned int resolution, std::string path, std::string filename);
+    noise_mapper(unsigned int resolution, const std::string& filename, std::function<unsigned long()> random);
 
 private:
     unsigned int hash(unsigned int a);
@@ -22,10 +22,6 @@ private:
     float value(float x, float y);
 
     unsigned int m_resolution;
-    std::string m_path;
-    std::string m_filename;
-    char *pic;
-
 };
 
 #endif //APC_RANDOMNESS_NOISE_MAPPER_H
