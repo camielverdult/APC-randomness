@@ -210,9 +210,20 @@ When rewriting this expression to a [recurrence relation](https://en.wikipedia.o
 
 _S<sub>n</sub> = S<sub>n-1</sub> + S<sub>n - 2</sub>_
 
-The subtract with carry expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
+The subtract with carry random number generation method expands on this by subtracting a _cy(i-1)_ part and mods the output with M, so the equation looks like this:
 
-x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % M where cy = 
+`x(i) = (x(i - S) - x(i - R) - cy(i - 1)) % W where cy = 1 if x(i - S) - x(i - R) - cy(i - 1) < 0 else 0`
+
+The variables in the formula describe the following:
+- W: the word size, in bits, of the state sequence
+- S: the short lag
+- R: the long lag, where 0 < s < r
+
+An example of values to use in the formula is `ranlux48_base`, these describe the subtract with carry as the following:
+
+- W = 48
+- S = 5
+- R = 12
 
 ## Cryptographically strong random number generators
 
@@ -243,3 +254,4 @@ Quantum mechanics states that the nuclear decay of atoms is fundamentally random
 - https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator
 - https://en.wikipedia.org/wiki/Hardware_random_number_generator
 - https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine
+- https://en.cppreference.com/w/cpp/numeric/random/subtract_with_carry_engine
