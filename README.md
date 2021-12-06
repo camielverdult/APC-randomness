@@ -70,12 +70,11 @@ This is the main drawback of all pseudo-random number generators. While they gen
 they rely solely on getting a different seed everytime to stay random over time.
 To make up for this drawback, the current system time of the machine running the program is used as the seed for the RNG.
 This system time is the amount of seconds since january 1st, 1970. This insures that, unless the rand() function is called multiple times per second,
-the output will always be different.
+the output will always be different. To run this example, select the `std_rand_example` configuration.
 
 #### Example 2: `std::linear_congruential_engine`, see the code in linear_congruential.cpp
 
-This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::linear_congruential_engine` generating the dice outcome.
-
+This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::linear_congruential_engine` generating the dice outcome. To run this example, select the `linear_congruential_example` configuration.
 
 
 ### Mersenne Twister
@@ -208,7 +207,7 @@ if __name__ == '__main__':
 
 #### Example 3: `std::mersenne_twister_engine`, see the code in linear_congruential.cpp
 
-This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome.
+This code example demonstrates the built in `std::linear_congruential_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::mersenne_twister_engine` generating the dice outcome. To run this example, select the `mersenne_twister_example` configuration.
 
 
 ### Lagged Fibonacci / Subtract with Carry
@@ -237,7 +236,6 @@ An example of values to use in the formula is `ranlux48_base`, these describe th
 #### Example 4: `std::subtract_with_carry_engine`, see the code in linear_congruential.cpp
 
 This code example demonstrates the built in `std::subtract_with_carry_engine` usage, and how it responds to different (or the same) seeds. You can try putting in different seeds to see the outcome of 7 seven dice roll outcomes with the `std::subtract_with_carry_engine` generating the dice outcome.
-
 
 ## Cryptographically strong random number generators
 
